@@ -57,7 +57,7 @@ regex = "1"
 percent-encoding = "2.1"
 parking_lot = { version = "0.12", features = ["arc_lock"] }
 socket2 = { version = ">=0.4, <1.0.0", features = ["all"] }
-flate2 = { version = "1", features = ["zlib-ng"], default-features = false }
+flate2 = { version = "1", default-features = false }
 sfv = "0.10.4"
 rand = "0.8"
 ahash = { workspace = true }
@@ -93,7 +93,7 @@ hyperlocal = "0.8"
 jemallocator = "0.5"
 
 [features]
-default = []
+default = ["flate2/zlib-ng"]
 openssl = ["pingora-openssl", "openssl_derived"]
 boringssl = ["pingora-boringssl", "openssl_derived"]
 rustls = ["pingora-rustls", "any_tls", "dep:x509-parser", "ouroboros"]
@@ -102,3 +102,4 @@ patched_http1 = ["pingora-http/patched_http1"]
 openssl_derived = ["any_tls"]
 any_tls = []
 sentry = ["dep:sentry"]
+flate_rust = ["flate2/rust_backend"]

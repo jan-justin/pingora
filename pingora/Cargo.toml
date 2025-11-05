@@ -103,6 +103,8 @@ rustls = [
     "any_tls",
 ]
 
+flate_rust = ["pingora-core/flate_rust"]
+
 #! ### Pingora extensions
 
 ## Include the [proxy](crate::proxy) module
